@@ -644,16 +644,37 @@
       <v-row class="d-flex justify-center">
         <v-col col="12" sm="6" class="text-center">
           <div>
-            <!-- <v-btn
-          class="text-none mb-4"
-          color="blue lighten-3"
-          size="x-large"
-          variant="flat"
-         to="/PreviewPrint"
-        >
-          Preview
-        </v-btn> -->
-            <PreviewRisk />
+            <v-btn
+              class="text-none mb-4"
+              color="blue lighten-3"
+              size="x-large"
+              variant="flat"
+              :to="{
+                name: 'PreviewPrint',
+                query: {
+                  policyUSDrate: policyUSDrate,
+                  policyLYDrate: policyLYDrate,
+                  formattedTotalSumInsured: formattedTotalSumInsured,
+                  formattedPremium: formattedPremium,
+                  selectedCurrency: selectedCurrency,
+                  formattedacceptanceSumInsured: formattedacceptanceSumInsured,
+                  formattedacceptancePremium: formattedacceptancePremium,
+                  formattedUSDacceptanceSumInsured:
+                    formattedUSDacceptanceSumInsured,
+                  formattedUSDacceptancepremium: formattedUSDacceptancepremium,
+                  formattedLYDacceptanceSumInsured:
+                    formattedLYDacceptanceSumInsured,
+                  formattedLYDacceptancepremium: formattedLYDacceptancepremium,
+                  ourShare: ourShare,
+                  formattedLYDbrokerAmount: formattedLYDbrokerAmount,
+                  formattedUSDbrokerAmount: formattedUSDbrokerAmount,
+                  brokerRate: brokerRate,
+                  formattedUSDFACPremium:formattedUSDFACPremium
+                },
+              }"
+            >
+              Preview
+            </v-btn>
           </div>
         </v-col>
         <v-col col="12" sm="6" class="text-center">
@@ -723,7 +744,6 @@ import currencyComponent from "./currencyComponent.vue";
 import CoversComponent from "./CoversComponent.vue";
 import { usePolicyStore } from "../stores/policy";
 import saveButton from "./saveButton.vue";
-import PreviewRisk from "./PreviewRisk.vue";
 
 const dialog = ref(false);
 
@@ -1035,11 +1055,11 @@ const updateacceptancePremium2 = () => {
   }
 };
 
-provide("Print", {
+const forPrint = {
   policyUSDrate,
   policyLYDrate,
   formattedTotalSumInsured,
-   formattedPremium,
+  formattedPremium,
   selectedCurrency,
   formattedacceptanceSumInsured,
   formattedacceptancePremium,
@@ -1049,7 +1069,7 @@ provide("Print", {
   formattedLYDacceptancepremium,
   ourShare,
   formattedLYDbrokerAmount,
- });
+};
 
 // Watch for changes in isAmountChecked and ourSare
 watch(

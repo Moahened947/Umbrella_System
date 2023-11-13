@@ -1,6 +1,6 @@
 <template>
 
-    <InfoForm/>
+    <InfoForm />
     <drawerComponent :noResize="true"/>
 <tabComponent :noResize="true"/>
 </template>
@@ -11,6 +11,3 @@ import tabComponent from "../components/tabComponent.vue";
 
 </script>
 
-<style scoped>
-
-</style>

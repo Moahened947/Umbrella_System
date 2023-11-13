@@ -11,6 +11,9 @@ const router = createRouter({
     {
       path: "/facaltative",
       name: "facaltative",
+      meta: {
+        title: "facaltative",
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -19,6 +22,9 @@ const router = createRouter({
     {
       path: "/NewRisk",
       name: "NewRisk",
+      meta: {
+        title: "New Risk",
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -27,6 +33,9 @@ const router = createRouter({
     {
       path: "/settings",
       name: "settings",
+      meta: {
+        title: "settings",
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -35,6 +44,9 @@ const router = createRouter({
     {
       path: "/login",
       name: "login",
+      meta: {
+        title: "login",
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -47,17 +59,26 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/dashboard.vue"),
+      meta: {
+        title: "dashboard",
+      },
     },
     {
       path: "/PreviewPrint",
       name: "PreviewPrint",
+      meta: {
+        title: "Preview Print",
+      },
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/PreviewPrint.vue"),
     },
-
   ],
 });
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
+})
 
 export default router;
