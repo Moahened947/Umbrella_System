@@ -1,37 +1,37 @@
 <template>
   <v-container
     class="d-print-block content"
-    style="max-width: 1500px; text-align: center; margin-left: 150px"
+    style="max-width: 1500px; text-align: center; margin-left: 10px"
   >
     <v-row>
       <v-col
-        class="d-flex align-center justify-center"
+        class="d-flex align-center"
         style="
-          border: 2px solid black;
-          max-width: 167px;
+
+          max-width: 197px;
           max-height: 22px;
           margin-bottom: 5px;
           margin-right: 10px;
-          background-color: #c0c0c0;
+
         "
       >
-        <strong>Year </strong>
+        <strong>Year: {{ new Date().getFullYear() }} </strong>
       </v-col>
-      <strong>2023</strong>
+
     </v-row>
 
     <v-row>
       <v-col
-        class="d-flex align-center justify-center"
+        class="d-flex align-center "
         style="
-          border: 2px solid black;
-          max-width: 130px;
+
+          max-width: 500px;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
-        <strong>Ref</strong>
+        <strong>Ref: {{ $route.query.Ref }}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -41,9 +41,9 @@
           border: 2px solid black;
           text-align: center;
           max-height: 22px;
-          max-width: 678px;
+          max-width: 900px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Exchange Rate</strong>
@@ -59,7 +59,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Rate For Policy Bank</strong>
@@ -70,7 +70,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -87,7 +87,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Rate</strong>
@@ -104,7 +104,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Rate For Libyan Bank</strong>
@@ -115,7 +115,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -132,7 +132,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Rate</strong>
@@ -145,10 +145,10 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 678px;
+          max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Currency Of Policy</strong>
@@ -164,7 +164,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>TSI</strong>
@@ -175,7 +175,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -192,7 +192,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>{{$route.query.selectedCurrency}}</strong>
@@ -209,7 +209,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Premium</strong>
@@ -220,7 +220,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -237,7 +237,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>{{$route.query.selectedCurrency}}</strong>
@@ -250,10 +250,10 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 678px;
+          max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Acceptance Currency Of Policy</strong>
@@ -269,7 +269,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>TSI</strong>
@@ -280,7 +280,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -297,7 +297,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>{{$route.query.selectedCurrency}}</strong>
@@ -314,7 +314,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Premium</strong>
@@ -325,7 +325,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -342,7 +342,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>{{$route.query.selectedCurrency}}</strong>
@@ -355,10 +355,10 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 678px;
+          max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Acceptance Currency Of USD</strong>
@@ -374,7 +374,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>TSI</strong>
@@ -385,7 +385,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -402,7 +402,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>USD</strong>
@@ -419,7 +419,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Premium</strong>
@@ -430,7 +430,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -447,7 +447,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>USD</strong>
@@ -460,10 +460,10 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 678px;
+          max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Acceptance Currency Of LYD</strong>
@@ -480,7 +480,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>TSI</strong>
@@ -491,7 +491,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -508,7 +508,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>LYD</strong>
@@ -525,7 +525,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Premium</strong>
@@ -536,7 +536,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -553,7 +553,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>LYD</strong>
@@ -570,7 +570,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Our Share</strong>
@@ -581,7 +581,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -598,7 +598,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>LYD</strong>
@@ -614,7 +614,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Broker Commission</strong>
@@ -625,7 +625,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -642,7 +642,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>LYD</strong>
@@ -658,7 +658,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Broker Amount</strong>
@@ -669,7 +669,7 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 335px;
+          max-width: 457px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
@@ -686,7 +686,7 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>LYD</strong>
@@ -698,12 +698,12 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           text-align: center;
           max-height: 22px;
           margin-top: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Acceptance S/I USD</strong>
@@ -713,13 +713,13 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           text-align: center;
           max-height: 22px;
           margin-top: 5px;
           margin-left: 3px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Acc/Premium USD</strong>
@@ -729,13 +729,13 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           margin-left: 3px;
           text-align: center;
           max-height: 22px;
           margin-top: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Broker Amount USD</strong>
@@ -745,13 +745,13 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           margin-left: 3px;
           text-align: center;
           max-height: 22px;
           margin-top: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong> Umbrella Re USD</strong>
@@ -763,7 +763,7 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           text-align: center;
           max-height: 22px;
@@ -777,7 +777,7 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           text-align: center;
           max-height: 22px;
@@ -792,7 +792,7 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           text-align: center;
           max-height: 22px;
@@ -807,7 +807,7 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 167px;
+          max-width: 197px;
           font-size: 14px;
           text-align: center;
           max-height: 22px;
@@ -825,11 +825,11 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 678px;
+          max-width: 865px;
           max-height: 22px;
           margin-bottom: 5px;
           margin-top: 7px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Reinsurance Terms Slip</strong>
@@ -842,11 +842,11 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 200px;
+          max-width: 260px;
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Insured</strong>
@@ -857,13 +857,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 474px;
+         max-width: 675px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{}}</strong>
+        <strong>{{$route.query.insuedName}}</strong>
       </v-col>
     </v-row>
 
@@ -873,11 +873,11 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 200px;
+          max-width: 260px;
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Reinsurance</strong>
@@ -888,13 +888,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 474px;
+         max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{}}</strong>
+        <strong>{{$route.query.reinsurance}}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -903,11 +903,11 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 200px;
+          max-width: 260px;
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Policy Type</strong>
@@ -918,13 +918,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 474px;
+         max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{}}</strong>
+        <strong>{{$route.query.selectedPolicyType}}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -933,11 +933,11 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 200px;
+          max-width: 260px;
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Location</strong>
@@ -948,13 +948,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 474px;
+         max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{}}</strong>
+        <strong>{{$route.query.selectedCountry}}</strong>
       </v-col>
     </v-row>
 
@@ -968,11 +968,11 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 200px;
+          max-width: 260px;
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>PPW</strong>
@@ -983,13 +983,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 474px;
+         max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{}}</strong>
+        <strong>{{$route.query.ppw}}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -998,11 +998,11 @@
         class="d-flex align-center justify-center"
         style="
           border: 2px solid black;
-          max-width: 200px;
+          max-width: 260px;
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-          background-color: #c0c0c0;
+
         "
       >
         <strong>Quarter</strong>
@@ -1013,73 +1013,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-          max-width: 474px;
+         max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{}}</strong>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        cols="4"
-        class="d-flex align-center justify-center"
-        style="
-          border: 2px solid black;
-          max-width: 200px;
-          text-align: center;
-          max-height: 22px;
-          margin-bottom: 5px;
-          background-color: #c0c0c0;
-        "
-      >
-        <strong>Total Sum Insured</strong>
-      </v-col>
-      <v-col
-        cols="8"
-        class="d-flex align-center justify-center ml-1"
-        style="
-          border: 2px solid black;
-          text-align: center;
-          max-width: 474px;
-          max-height: 22px;
-          margin-bottom: 5px;
-          background-color: white;
-        "
-      >
-        <strong>{{$route.query.formattedTotalSumInsured}}</strong>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col
-        cols="4"
-        class="d-flex align-center justify-center"
-        style="
-          border: 2px solid black;
-          max-width: 200px;
-          text-align: center;
-          max-height: 22px;
-          margin-bottom: 5px;
-          background-color: #c0c0c0;
-        "
-      >
-        <strong>Premium 100%</strong>
-      </v-col>
-      <v-col
-        cols="8"
-        class="d-flex align-center justify-center ml-1"
-        style="
-          border: 2px solid black;
-          text-align: center;
-          max-width: 474px;
-          max-height: 22px;
-          margin-bottom: 5px;
-          background-color: white;
-        "
-      >
-        <strong>{{$route.query.formattedPremium}}</strong>
+        <strong>{{$route.query.quarter}}</strong>
       </v-col>
     </v-row>
     <v-row style="width: 810px">
@@ -1087,14 +1027,14 @@
         cols="10"
         style="
           border: 2px solid black;
-          text-align: center;
+          text-align: left;
           height: 100px;
           width: 100%;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{}}</strong>
+        <strong>{{$route.query.notes}}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -1112,16 +1052,16 @@
       </div>
     </v-row>
     <v-row>
-      <div style="display: flex; justify-content: space-between; gap: 200px">
+      <div style="display: flex; justify-content: space-between; gap: 240px">
         <img
           src="../assets/Mohaned_Signture.png"
           alt="Image 1"
-          style="width: 300px; height: 100px"
+          style="width: 250px; height: 50px"
         />
         <img
           src="../assets/Osama.png"
           alt="Image 2"
-          style="width: 300px; height: 100px"
+          style="width: 250px; height: 50px"
         />
       </div>
     </v-row>

@@ -17,6 +17,7 @@
               <v-text-field
                 label="Policy Number"
                 variant="outlined"
+                v-model= "policyNumber"
                 clearable
                 @click="!loading"
               ></v-text-field>
@@ -25,6 +26,7 @@
               <v-text-field
                 label="Insured Name"
                 variant="outlined"
+                v-model = "insuedName"
                 clearable
               ></v-text-field>
             </v-col>
@@ -32,6 +34,7 @@
               <v-autocomplete
                 variant="outlined"
                 clearable
+                v-model = "reinsurance"
                 label="Insurance or Broker"
                 :items="[
                   'Exos Re',
@@ -61,12 +64,13 @@
               <v-autocomplete
                 variant="outlined"
                 clearable
+                v-model = "quarter"
                 label="Quarter"
                 :items="['1st', '2nd', '3rd', '4th']"
               ></v-autocomplete>
             </v-col>
             <v-col cols="12" lg="3" sm="6" md="3">
-              <countriesComponent />
+              <countriesComponent @Country-selected = "handleCountrySelected" />
             </v-col>
             <v-col cols="12" sm="3">
               <currencyComponent @currency-selected="handleCurrencySelected" />
@@ -131,6 +135,7 @@
                   <v-text-field
                     type="number"
                     label="PPW"
+                    v-model = "ppw"
                     variant="outlined"
                     clearable
                   ></v-text-field>
@@ -139,6 +144,7 @@
                   <v-text-field
                     type="number"
                     label="PML"
+                    v-model = "pml"
                     variant="outlined"
                     clearable
                   ></v-text-field>
@@ -170,6 +176,7 @@
               <v-textarea
                 clearable
                 label="Notes"
+                v-model="notes"
                 variant="outlined"
                 no-resize="true"
               ></v-textarea>
@@ -652,6 +659,7 @@
               :to="{
                 name: 'PreviewPrint',
                 query: {
+                  Ref:Ref,
                   policyUSDrate: policyUSDrate,
                   policyLYDrate: policyLYDrate,
                   formattedTotalSumInsured: formattedTotalSumInsured,
@@ -669,7 +677,15 @@
                   formattedLYDbrokerAmount: formattedLYDbrokerAmount,
                   formattedUSDbrokerAmount: formattedUSDbrokerAmount,
                   brokerRate: brokerRate,
-                  formattedUSDFACPremium:formattedUSDFACPremium
+                  formattedUSDFACPremium:formattedUSDFACPremium,
+                  insuedName:insuedName,
+                  reinsurance:reinsurance,
+                  selectedPolicyType,
+                  selectedCountry:selectedCountry,
+                  policyNumber:policyNumber,
+                  ppw:ppw,
+                  quarter:quarter,
+                  notes:notes,
                 },
               }"
             >
@@ -679,10 +695,12 @@
         </v-col>
         <v-col col="12" sm="6" class="text-center">
           <div>
+
             <saveButton />
           </div>
         </v-col>
       </v-row>
+
     </v-container>
 
     <div style="display: none">
@@ -745,6 +763,7 @@ import CoversComponent from "./CoversComponent.vue";
 import { usePolicyStore } from "../stores/policy";
 import saveButton from "./saveButton.vue";
 
+
 const dialog = ref(false);
 
 const dateFrom = ref(false);
@@ -793,17 +812,16 @@ const premium = ref(policyStore.premium);
 const isAmount2Checked = ref(policyStore.isAmount2Checked);
 const rate = ref(policyStore.rate);
 const brokerRate = ref(policyStore.brokerRate);
-
+const notes = ref('');
 const acceptanceSumInsured = ref(policyStore.acceptanceSumInsured);
 const acceptancePremium = ref(policyStore.acceptancePremium);
 const isAmountChecked = ref(policyStore.isAmountChecked);
 const ourShare = ref(policyStore.ourShare);
 const policyUSDrate = ref(policyStore.policyUSDrate);
 const policyLYDrate = ref(policyStore.policyLYDrate);
-const selectedPolicyType = ref(null);
 const classBusinessItems = ref([]);
 const TSIItems = ref([]);
-
+const insuedName = ref('');
 const FireClassBusiness = ref(policyStore.FireClassBusiness);
 const EngClassBusiness = ref(policyStore.EngClassBusiness);
 const GaClassBusiness = ref(policyStore.GaClassBusiness);
@@ -847,6 +865,78 @@ const LYDSpecialRetention = ref();
 const selectedItem = ref(null);
 const selectedChips = reactive([]);
 const SumInsuredPolicy = ref(0);
+const selectedCurrency = ref(null);
+const selectedCountry = ref(null);
+
+
+
+const selectedPolicyType = ref(null);
+const fireCounter = ref(0);
+const engineeringCounter = ref(0);
+const generalAccidentCounter = ref(0);
+const marineCargoCounter = ref(0);
+const marineHullCounter = ref(0);
+const printp = ref(null);
+const printPage = (value) => {
+  printp.value = value;
+}
+
+// Computed property to generate the policy number
+const generatedPolicyNumber = computed(() => {
+    if (selectedPolicyType.value !== null) {
+        let prefix = '';
+        switch (selectedPolicyType.value) {
+            case "Fire":
+                prefix = `100 Fir ${fireCounter.value.toString().padStart(4, '0')}`;
+                fireCounter.value++;
+                break;
+            case "Engineering":
+                prefix = `101 Eng ${engineeringCounter.value.toString().padStart(4, '0')}`;
+                engineeringCounter.value++;
+                break;
+            case "General Accident":
+                prefix = `102 G.A ${generalAccidentCounter.value.toString().padStart(4, '0')}`;
+                generalAccidentCounter.value++;
+                break;
+            case "Marine Cargo":
+                prefix = `103 M.C ${marineCargoCounter.value.toString().padStart(4, '0')}`;
+                marineCargoCounter.value++;
+                break;
+            case "Marine Hull":
+                prefix = `104 M.H ${marineHullCounter.value.toString().padStart(4, '0')}`;
+                marineHullCounter.value++;
+                break;
+            default:
+                // Handle other cases or leave prefix empty.
+                break;
+        }
+
+        // Generate random number between 1 and 1000
+        let randomNumber = Math.floor(Math.random() * 1000) + 1;
+
+        // Add leading zeros to the random number
+        let formattedNumber = randomNumber.toString().padStart(3, '0');
+
+        // Combine prefix and formattedNumber using template literal
+        return `UMB-${prefix}${formattedNumber}/${new Date().getFullYear()}`;
+    } else {
+        console.warn('Selected policy type is null. Cannot generate policy number.');
+        return '';
+    }
+});
+
+// Watch for changes in selectedPolicyType
+watch(selectedPolicyType, () => {
+    // The computed property will automatically update
+});
+
+const Ref = ref(generatedPolicyNumber);
+
+
+
+
+
+
 
 const addChip = () => {
   const combinedValue = selectedItem.value + " " + SumInsuredPolicy.value;
@@ -872,12 +962,15 @@ const getTotalSumInsured = computed(() => {
 watch(getTotalSumInsured, (newTotal) => {
   totalSumInsured.value = newTotal.toString();
 });
-// Define a variable to store the selected currency
-const selectedCurrency = ref(null);
+
 
 // Define a function to handle the selected currency
 const handleCurrencySelected = (value) => {
   return (selectedCurrency.value = value);
+};
+// Define a function to handle the selected country
+const handleCountrySelected = (value) => {
+  return (selectedCountry.value = value);
 };
 
 const updateClassBusinessItems = () => {
