@@ -1,47 +1,57 @@
 <template>
-      <div class="center-container">
-        <v-card
-    class="py-8 px-6 text-center mx-auto ma-4"
-    elevation="12"
-    max-width="400"
-    width="100%"
-  >
-    <h3 class="text-h6 mb-4">Verify Your Account</h3>
+  <v-sheet class=" pa-12" rounded>
+    <v-card class="mx-auto px-6 py-8" max-width="344">
+      <v-form
+        v-model="form"
+        @submit.prevent="onSubmit"
+      >
 
-    <div class="text-body-2">
-      We sent a verification code to john..@gmail.com <br>
 
-      Please check your email and paste the code below.
-    </div>
+        <v-text-field
+          v-model="password"
+          type="password"
+          :readonly="loading"
+          :rules="[required]"
+          clearable
+          label="Code"
+        ></v-text-field>
 
-    <v-sheet color="surface">
-      <v-otp-input
-        v-model="otp"
-        type="password"
-        variant="solo"
-      ></v-otp-input>
-    </v-sheet>
+        <br>
 
-    <v-btn
-      class="my-4"
-      color="purple"
-      height="40"
-      text="Verify"
-      variant="flat"
-      width="70%"
-    ></v-btn>
-
-    <div class="text-caption">
-      Didn't receive the code? <a href="#" @click.prevent="otp = ''">Resend</a>
-    </div>
-  </v-card>
-    </div>
-  </template>
-
+        <v-btn
+          :disabled="!form"
+          :loading="loading"
+          block
+          color="success"
+          size="large"
+          type="submit"
+          variant="elevated"
+        >
+          Sign In
+        </v-btn>
+      </v-form>
+    </v-card>
+  </v-sheet>
+</template>
 <script>
   export default {
     data: () => ({
-      otp: '',
+      form: false,
+      password: null,
+      loading: false,
     }),
+
+    methods: {
+      onSubmit () {
+        if (!this.form) return
+
+        this.loading = true
+
+        setTimeout(() => (this.loading = false), 2000)
+      },
+      required (v) {
+        return !!v || 'Field is required'
+      },
+    },
   }
 </script>

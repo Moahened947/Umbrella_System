@@ -7,29 +7,20 @@
       <v-col
         class="d-flex align-center"
         style="
-
           max-width: 197px;
           max-height: 22px;
           margin-bottom: 5px;
           margin-right: 10px;
-
         "
       >
         <strong>Year: {{ new Date().getFullYear() }} </strong>
       </v-col>
-
     </v-row>
 
     <v-row>
       <v-col
-        class="d-flex align-center "
-        style="
-
-          max-width: 500px;
-          max-height: 22px;
-          margin-bottom: 5px;
-
-        "
+        class="d-flex align-center"
+        style="max-width: 500px; max-height: 22px; margin-bottom: 5px"
       >
         <strong>Ref: {{ $route.query.Ref }}</strong>
       </v-col>
@@ -43,7 +34,6 @@
           max-height: 22px;
           max-width: 900px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Exchange Rate</strong>
@@ -59,7 +49,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Rate For Policy Bank</strong>
@@ -76,7 +65,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.policyUSDrate}}</strong>
+        <strong>{{ $route.query.policyUSDrate }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -87,7 +76,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Rate</strong>
@@ -104,7 +92,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Rate For Libyan Bank</strong>
@@ -121,7 +108,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.policyLYDrate}}</strong>
+        <strong>{{ $route.query.policyLYDrate }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -132,7 +119,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Rate</strong>
@@ -148,7 +134,6 @@
           max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Currency Of Policy</strong>
@@ -164,7 +149,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>TSI</strong>
@@ -181,7 +165,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedTotalSumInsured}}</strong>
+        <strong>{{ $route.query.formattedTotalSumInsured }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -192,10 +176,9 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
-        <strong>{{$route.query.selectedCurrency}}</strong>
+        <strong>{{ $route.query.selectedCurrency }}</strong>
       </v-col>
     </v-row>
 
@@ -209,7 +192,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Premium</strong>
@@ -226,7 +208,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedPremium}}</strong>
+        <strong>{{ $route.query.formattedPremium }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -237,10 +219,9 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
-        <strong>{{$route.query.selectedCurrency}}</strong>
+        <strong>{{ $route.query.selectedCurrency }}</strong>
       </v-col>
     </v-row>
 
@@ -253,7 +234,6 @@
           max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Acceptance Currency Of Policy</strong>
@@ -269,7 +249,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>TSI</strong>
@@ -286,7 +265,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedacceptanceSumInsured}}</strong>
+        <strong>{{ $route.query.formattedacceptanceSumInsured }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -297,10 +276,9 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
-        <strong>{{$route.query.selectedCurrency}}</strong>
+        <strong>{{ $route.query.selectedCurrency }}</strong>
       </v-col>
     </v-row>
 
@@ -314,7 +292,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Premium</strong>
@@ -331,7 +308,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedacceptancePremium}}</strong>
+        <strong>{{ $route.query.formattedacceptancePremium }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -342,10 +319,9 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
-        <strong>{{$route.query.selectedCurrency}}</strong>
+        <strong>{{ $route.query.selectedCurrency }}</strong>
       </v-col>
     </v-row>
 
@@ -358,7 +334,6 @@
           max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Acceptance Currency Of USD</strong>
@@ -374,7 +349,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>TSI</strong>
@@ -391,7 +365,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedUSDacceptanceSumInsured}}</strong>
+        <strong>{{ $route.query.formattedUSDacceptanceSumInsured }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -402,7 +376,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>USD</strong>
@@ -419,7 +392,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Premium</strong>
@@ -436,7 +408,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedUSDacceptancepremium}}</strong>
+        <strong>{{ $route.query.formattedUSDacceptancepremium }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -447,7 +419,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>USD</strong>
@@ -463,7 +434,6 @@
           max-width: 900px;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Acceptance Currency Of LYD</strong>
@@ -480,7 +450,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>TSI</strong>
@@ -497,7 +466,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedLYDacceptanceSumInsured}}</strong>
+        <strong>{{ $route.query.formattedLYDacceptanceSumInsured }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -508,7 +477,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>LYD</strong>
@@ -525,7 +493,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Premium</strong>
@@ -542,7 +509,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedLYDacceptancepremium}}</strong>
+        <strong>{{ $route.query.formattedLYDacceptancepremium }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -553,7 +520,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>LYD</strong>
@@ -570,7 +536,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Our Share</strong>
@@ -587,7 +552,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.ourShare}} %</strong>
+        <strong>{{ $route.query.ourShare }} %</strong>
       </v-col>
       <v-col
         cols="4"
@@ -598,7 +563,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>LYD</strong>
@@ -614,7 +578,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Broker Commission</strong>
@@ -631,7 +594,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.brokerRate}} %</strong>
+        <strong>{{ $route.query.brokerRate }} %</strong>
       </v-col>
       <v-col
         cols="4"
@@ -642,7 +605,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>LYD</strong>
@@ -658,7 +620,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Broker Amount</strong>
@@ -675,7 +636,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.formattedLYDbrokerAmount}}</strong>
+        <strong>{{ $route.query.formattedLYDbrokerAmount }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -686,7 +647,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>LYD</strong>
@@ -703,7 +663,6 @@
           text-align: center;
           max-height: 22px;
           margin-top: 5px;
-
         "
       >
         <strong>Acceptance S/I USD</strong>
@@ -719,7 +678,6 @@
           max-height: 22px;
           margin-top: 5px;
           margin-left: 3px;
-
         "
       >
         <strong>Acc/Premium USD</strong>
@@ -735,7 +693,6 @@
           text-align: center;
           max-height: 22px;
           margin-top: 5px;
-
         "
       >
         <strong>Broker Amount USD</strong>
@@ -751,7 +708,6 @@
           text-align: center;
           max-height: 22px;
           margin-top: 5px;
-
         "
       >
         <strong> Umbrella Re USD</strong>
@@ -770,7 +726,7 @@
           margin-top: 5px;
         "
       >
-        <strong>{{$route.query.formattedUSDacceptanceSumInsured}}</strong>
+        <strong>{{ $route.query.formattedUSDacceptanceSumInsured }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -785,7 +741,7 @@
           margin-left: 3px;
         "
       >
-        <strong>{{$route.query.formattedUSDacceptancepremium}}</strong>
+        <strong>{{ $route.query.formattedUSDacceptancepremium }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -800,7 +756,7 @@
           margin-left: 3px;
         "
       >
-        <strong>{{$route.query.formattedUSDbrokerAmount}}</strong>
+        <strong>{{ $route.query.formattedUSDbrokerAmount }}</strong>
       </v-col>
       <v-col
         cols="4"
@@ -815,7 +771,7 @@
           margin-left: 3px;
         "
       >
-        <strong>{{$route.query.formattedUSDFACPremium}}</strong>
+        <strong>{{ $route.query.formattedUSDFACPremium }}</strong>
       </v-col>
     </v-row>
 
@@ -829,7 +785,6 @@
           max-height: 22px;
           margin-bottom: 5px;
           margin-top: 7px;
-
         "
       >
         <strong>Reinsurance Terms Slip</strong>
@@ -846,7 +801,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Insured</strong>
@@ -857,13 +811,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-         max-width: 675px;
+          max-width: 675px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{$route.query.insuedName}}</strong>
+        <strong>{{ $route.query.insuedName }}</strong>
       </v-col>
     </v-row>
 
@@ -877,7 +831,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Reinsurance</strong>
@@ -888,13 +841,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-         max-width: 674px;
+          max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{$route.query.reinsurance}}</strong>
+        <strong>{{ $route.query.reinsurance }}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -907,7 +860,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Policy Type</strong>
@@ -918,13 +870,69 @@
         style="
           border: 2px solid black;
           text-align: center;
-         max-width: 674px;
+          max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{$route.query.selectedPolicyType}}</strong>
+        <strong>{{ $route.query.selectedPolicyType }}</strong>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        cols="4"
+        class="d-flex align-center justify-center"
+        style="
+          border: 2px solid black;
+          max-width: 200px;
+          text-align: center;
+          max-height: 22px;
+          margin-bottom: 5px;
+        "
+      >
+        <strong>From</strong>
+      </v-col>
+      <v-col
+        cols="3"
+        class="d-flex align-center justify-center ml-1"
+        style="
+          border: 2px solid black;
+          text-align: center;
+          max-width: 674px;
+          max-height: 22px;
+          margin-bottom: 5px;
+          background-color: white;
+        "
+      >
+        <strong>{{ $route.query.From }}</strong>
+      </v-col>
+      <v-col
+        cols="3"
+        class="d-flex align-center justify-center ml-1"
+        style="
+          border: 2px solid black;
+          max-width: 186px;
+          text-align: center;
+          max-height: 22px;
+          margin-bottom: 5px;
+        "
+      >
+        <strong>To</strong>
+      </v-col>
+      <v-col
+        cols="3"
+        class="d-flex align-center justify-center ml-1"
+        style="
+          border: 2px solid black;
+          text-align: center;
+          max-width: 674px;
+          max-height: 22px;
+          margin-bottom: 5px;
+          background-color: white;
+        "
+      >
+        <strong>{{ $route.query.ToDate }}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -937,7 +945,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Location</strong>
@@ -948,13 +955,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-         max-width: 674px;
+          max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{$route.query.selectedCountry}}</strong>
+        <strong>{{ $route.query.selectedCountry }}</strong>
       </v-col>
     </v-row>
 
@@ -972,7 +979,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>PPW</strong>
@@ -983,13 +989,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-         max-width: 674px;
+          max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{$route.query.ppw}}</strong>
+        <strong>{{ $route.query.ppw }}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -1002,7 +1008,6 @@
           text-align: center;
           max-height: 22px;
           margin-bottom: 5px;
-
         "
       >
         <strong>Quarter</strong>
@@ -1013,13 +1018,13 @@
         style="
           border: 2px solid black;
           text-align: center;
-         max-width: 674px;
+          max-width: 674px;
           max-height: 22px;
           margin-bottom: 5px;
           background-color: white;
         "
       >
-        <strong>{{$route.query.quarter}}</strong>
+        <strong>{{ $route.query.quarter }}</strong>
       </v-col>
     </v-row>
     <v-row style="width: 810px">
@@ -1034,7 +1039,7 @@
           background-color: white;
         "
       >
-        <strong>{{$route.query.notes}}</strong>
+        <strong>{{ $route.query.notes }}</strong>
       </v-col>
     </v-row>
     <v-row>
@@ -1085,7 +1090,7 @@
         color="blue-darken-4"
         rounded="0"
         variant="flat"
-        @click="printPage"
+        @click="postDataToApi"
       >
         Print
       </v-btn>
@@ -1093,13 +1098,60 @@
   </v-container>
 </template>
 <script setup>
-import { ref, inject} from "vue";
+import { useRoute } from "vue-router";
+import axios from "axios";
 
-
+const route = useRoute();
+// onMounted(() => {
+//   printPage();
+// });
 const printPage = () => {
-  print();
+  window.print();
+};
 
+const forPrint = {
+  Ref: route.query.Ref,
+  policyUSDrate: route.query.policyUSDrate,
+  policyLYDrate: route.query.policyLYDrate,
+  formattedtotalSumInsured: route.query.formattedTotalSumInsured,
+  formattedpremium: route.query.formattedPremium,
+  selectedCurrency: route.query.selectedCurrency,
+  formattedacceptanceSumInsured: route.query.formattedacceptanceSumInsured,
+  formattedacceptancePremium: route.query.formattedacceptancePremium,
+  formattedUSDacceptanceSumInsured:
+    route.query.formattedUSDacceptanceSumInsured,
+  formattedUSDacceptancepremium: route.query.formattedUSDacceptancepremium,
+  formattedLYDacceptanceSumInsured:
+    route.query.formattedLYDacceptanceSumInsured,
+  formattedLYDacceptancepremium: route.query.formattedLYDacceptancepremium,
+  ourShare: route.query.ourShare,
+  formattedLYDbrokerAmount: route.query.formattedLYDbrokerAmount,
+  formattedUSDbrokerAmount: route.query.formattedUSDbrokerAmount,
+  brokerRate: route.query.brokerRate,
+  formattedUSDFACPremium: route.query.formattedUSDFACPremium,
+  insuedName: route.query.insuedName,
+  quarter: route.query.quarter,
+  policyNumber: route.query.policyNumber,
+  selectedChips: route.query.selectedChips || [],
+  selectedAdditionalCover: route.query.selectedAdditionalCover || [],
+  selectedPolicyType: route.query.selectedPolicyType,
+  dateFrom: route.query.From,
+  dateTo: route.query.ToDate,
+  selectedCountry: route.query.selectedCountry,
+  ppw: route.query.ppw,
+  pml: route.query.pml,
+  notes: route.query.notes,
+  reinsurance: route.query.reinsurance,
+};
 
+const postDataToApi = async () => {
+  console.log(forPrint); // Log the requestData object
+  try {
+    const response = await axios.post("http://localhost:3000/risk/", forPrint);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
 };
 </script>
 <style scoped>

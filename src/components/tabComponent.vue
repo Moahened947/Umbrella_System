@@ -6,7 +6,7 @@
       mode="shift"
       class="d-lg-none d-xl-none d-xxl-none"
     >
-      <v-btn to="/dashboard">
+      <v-btn to="/">
         <v-icon>mdi-view-dashboard</v-icon>
         <span>Dashboard</span>
       </v-btn>
