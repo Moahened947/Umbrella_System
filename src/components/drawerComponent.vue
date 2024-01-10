@@ -43,6 +43,15 @@
             title="Todo"
             :value="true"
           ></v-list-item>
+<v-list-item
+  disabled="true"
+  prepend-icon="mdi-chat"
+  href="http://127.0.0.1:5500/index.html"
+  target="_blank"
+  title="AI Chat"
+  :value="true"
+></v-list-item>
+
           <v-list-item
             prepend-icon="mdi-cog"
             to="/settings"
