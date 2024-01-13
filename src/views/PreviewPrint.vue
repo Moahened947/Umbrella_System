@@ -1090,16 +1090,14 @@
         color="blue-darken-4"
         rounded="0"
         variant="flat"
-        @click="postDataToApi"
       >
-        Print
+        Save
       </v-btn>
     </div>
   </v-container>
 </template>
 <script setup>
 import { useRoute } from "vue-router";
-import axios from "axios";
 
 const route = useRoute();
 // onMounted(() => {
@@ -1109,50 +1107,7 @@ const printPage = () => {
   window.print();
 };
 
-const forPrint = {
-  Ref: route.query.Ref,
-  policyUSDrate: route.query.policyUSDrate,
-  policyLYDrate: route.query.policyLYDrate,
-  formattedtotalSumInsured: route.query.formattedTotalSumInsured,
-  formattedpremium: route.query.formattedPremium,
-  selectedCurrency: route.query.selectedCurrency,
-  formattedacceptanceSumInsured: route.query.formattedacceptanceSumInsured,
-  formattedacceptancePremium: route.query.formattedacceptancePremium,
-  formattedUSDacceptanceSumInsured:
-    route.query.formattedUSDacceptanceSumInsured,
-  formattedUSDacceptancepremium: route.query.formattedUSDacceptancepremium,
-  formattedLYDacceptanceSumInsured:
-    route.query.formattedLYDacceptanceSumInsured,
-  formattedLYDacceptancepremium: route.query.formattedLYDacceptancepremium,
-  ourShare: route.query.ourShare,
-  formattedLYDbrokerAmount: route.query.formattedLYDbrokerAmount,
-  formattedUSDbrokerAmount: route.query.formattedUSDbrokerAmount,
-  brokerRate: route.query.brokerRate,
-  formattedUSDFACPremium: route.query.formattedUSDFACPremium,
-  insuedName: route.query.insuedName,
-  quarter: route.query.quarter,
-  policyNumber: route.query.policyNumber,
-  selectedChips: route.query.selectedChips || [],
-  selectedAdditionalCover: route.query.selectedAdditionalCover || [],
-  selectedPolicyType: route.query.selectedPolicyType,
-  dateFrom: route.query.From,
-  dateTo: route.query.ToDate,
-  selectedCountry: route.query.selectedCountry,
-  ppw: route.query.ppw,
-  pml: route.query.pml,
-  notes: route.query.notes,
-  reinsurance: route.query.reinsurance,
-};
 
-const postDataToApi = async () => {
-  console.log(forPrint); // Log the requestData object
-  try {
-    const response = await axios.post("http://localhost:3000/risk/", forPrint);
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
-};
 </script>
 <style scoped>
 @media print {
