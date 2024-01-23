@@ -817,7 +817,7 @@
           background-color: white;
         "
       >
-        <strong>{{ $route.query.insuedName }}</strong>
+        <strong >{{ $route.query.insuedName }}</strong>
       </v-col>
     </v-row>
 
@@ -1098,15 +1098,95 @@
 </template>
 <script setup>
 import { useRoute } from "vue-router";
+import axios from "axios";
 
 const route = useRoute();
+
 // onMounted(() => {
 //   printPage();
 // });
 const printPage = () => {
   window.print();
 };
+// const forPrint = {
+//   policyNumber: "policyNumber",
+//   insuredName: "test",
+//   inusuranceOrBroker: "ABC Insurance",
+//   quarter: "Q1",
+//   country: "USA",
+//   currency: "USD",
+//   limitOfTreaty: "1000000",
+//   dateFrom: new Date("2024-01-01T00:00:00.000Z"),
+//   isDateFromOpen: true,
+//   dateTo: new Date("2024-12-31T23:59:59.999Z"),
+//   isDateToOpen: true,
+//   pml: "500000",
+//   ppw: "75000",
+//   confirmation: "CONF-123",
+//   closing: "CLOS-456",
+//   notes: ["Note 1", "Note 2"],
+//   policyType: "Property",
+//   classOfBusiness: "Commercial",
+//   sumInsuredName: "Property Insurance",
+//   sumInsuredNumber: 1000000,
+//   covers: ["Fire", "Theft"],
+//   additionalCover: ["Flood"],
+//   Exclusion: ["Earthquake"],
+//   dateOfCurrency: new Date("2024-01-01T00:00:00.000Z"),
+//   rateOfPolicyCurrencyVsUSD: 1.2,
+//   rateOfLYDVsUSD: 0.5,
+//   TSIPolicyCurrency: 0,
+//   premiumPolicyCurrency: 120000,
+//   TSIAcceptancePolicyCurrency: 850000,
+//   premiumAcceptancePolicyCurrency: 110000,
+//   isAmountPolicyAcceptance: true,
+//   brokerAmountPolicyCurrency: 15000,
+//   facUmbrellaPolicyCurrency: 30000,
+//   umbrellaPremium50PolicyCurrency: 5000,
+//   retroPremium50PolicyCurrency: 2000,
+//   umbrellaCommisionPolicyCurrency: 2500,
+//   specialRetentionPolicyCurrency: 10000,
+//   TSIUSD: 750000,
+//   premiumUSD: 100000,
+//   TSIAcceptanceUSD: 700000,
+//   premiumAcceptanceUSD: 95000,
+//   brokerAmountUSD: 12000,
+//   facUmbrellaUSD: 25000,
+//   umbrellaPremium50USD: 4000,
+//   retroPremium50USD: 1500,
+//   umbrellaCommisionUSD: 2000,
+//   specialRetentionUSD: 8000,
+//   TSILYD: 1500000,
+//   premiumLYD: 200000,
+//   TSIAcceptanceLYD: 1800000,
+//   premiumAcceptanceLYD: 190000,
+//   brokerAmountLYD: 25000,
+//   facUmbrellaLYD: 50000,
+//   umbrellaPremium50LYD: 8000,
+//   retroPremium50LYD: 3000,
+//   umbrellaCommisionLYD: 4000,
+//   specialRetentionLYD: 16000,
+//   isAmountPolicyCurrency: true,
+//   rateOfPolicy: 1.1,
+//   ourShare: 0.6,
+//   brokerCommission: 0.1,
+//   isFac: true,
+//   isApprove: true,
+//   issuedDate: new Date("2024-01-15T12:00:00.000Z"),
+//   umbrellaReference: 'Ref',
+//   companyReference: "COMP-XYZ",
+//   employeeName: "Jane Smith",
+// };
 
+// const postDataToApi = async () => {
+//   // try {
+//   //   const response = await axios.post(
+//   //     "http://100.87.98.66:3000/risks",
+//   //     forPrint
+//   //   );
+//   // } catch (error) {}
+//   console.log(forPrint)
+// };
 
 </script>
 <style scoped>

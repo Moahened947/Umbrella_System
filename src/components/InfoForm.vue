@@ -17,7 +17,7 @@
               <v-text-field
                 label="Policy Number"
                 variant="outlined"
-                v-model="policyNumber"
+                v-model="forPrint.policyNumber"
                 clearable
                 @click="!loading"
               ></v-text-field>
@@ -26,7 +26,7 @@
               <v-text-field
                 label="Insured Name"
                 variant="outlined"
-                v-model="insuedName"
+                v-model="forPrint.insuredName"
                 clearable
               ></v-text-field>
             </v-col>
@@ -34,7 +34,7 @@
               <v-autocomplete
                 variant="outlined"
                 clearable
-                v-model="reinsurance"
+                v-model="forPrint.inusuranceOrBroker"
                 label="Insurance or Broker"
                 :items="[
                   'Exos Re',
@@ -64,7 +64,7 @@
               <v-autocomplete
                 variant="outlined"
                 clearable
-                v-model="quarter"
+                v-model="forPrint.quarter"
                 label="Quarter"
                 :items="['1st', '2nd', '3rd', '4th']"
               ></v-autocomplete>
@@ -81,6 +81,7 @@
                 clearable
                 label="Limit Of Treaty LYD"
                 :items="['Libya', 'Regional Business', 'Egypt', 'Other']"
+                v-model="forPrint.limitOfTreaty"
               ></v-autocomplete>
             </v-col>
           </v-row>
@@ -97,7 +98,7 @@
                     min="1930-01-01"
                     max="2080-12-31"
                     label="From"
-                    v-model="From"
+                    v-model="forPrint.dateFrom"
                     :disabled="dateFrom"
                     class="w-100"
                   ></v-text-field>
@@ -114,7 +115,7 @@
                     type="date"
                     id="To"
                     name="To"
-                    v-model="dateTo2"
+                    v-model="forPrint.dateTo"
                     variant="outlined"
                     min="1930-01-01"
                     max="2080-12-31"
@@ -137,7 +138,7 @@
                   <v-text-field
                     type="number"
                     label="PPW"
-                    v-model="ppw"
+                    v-model="forPrint.ppw"
                     variant="outlined"
                     clearable
                   ></v-text-field>
@@ -146,7 +147,7 @@
                   <v-text-field
                     type="number"
                     label="PML"
-                    v-model="pml"
+                    v-model="forPrint.pml"
                     variant="outlined"
                     clearable
                   ></v-text-field>
@@ -162,7 +163,8 @@
                 clearable
                 label="Confirmation"
                 :items="['Confirmed', 'Pendding', 'Rejected', 'Canceled']"
-              ></v-autocomplete>
+                v-model="forPrint.confirmation"
+                ></v-autocomplete>
             </v-col>
             <v-col cols="12" sm="6">
               <v-autocomplete
@@ -170,6 +172,7 @@
                 clearable
                 label="Closing"
                 :items="['Yes', 'No']"
+                v-model="forPrint.closing"
               ></v-autocomplete>
             </v-col>
           </v-row>
@@ -178,7 +181,7 @@
               <v-textarea
                 clearable
                 label="Notes"
-                v-model="notes"
+                v-model="forPrint.notes"
                 variant="outlined"
                 no-resize="true"
               ></v-textarea>
@@ -201,7 +204,7 @@
               <v-combobox
                 variant="outlined"
                 clearable
-                v-model="selectedPolicyType"
+                v-model="forPrint.policyType"
                 label="Policy Type"
                 :items="[
                   'Fire',
@@ -219,15 +222,16 @@
                 clearable
                 label="Class Of Business"
                 :items="classBusinessItems"
+                v-model="forPrint.classOfBusiness"
               ></v-combobox>
             </v-col>
             <v-col cols="12" lg="4" sm="6" md="4">
               <v-combobox
-                v-model="selectedItem"
                 :items="TSIItems"
                 variant="outlined"
                 clearable
                 label="Sum Insured"
+                v-model="forPrint.TSIItems"
               ></v-combobox>
             </v-col>
           </v-row>
@@ -301,6 +305,7 @@
                 max="2080-12-31"
                 label="Date Of Currency"
                 class="w-100"
+                v-model="forPrint.dateOfCurrency"
               ></v-text-field>
             </v-col>
             <v-col cols="12" sm="4">
@@ -309,7 +314,7 @@
                 label="Rate Of Policy Curreny VS USD"
                 variant="outlined"
                 clearable
-                v-model="policyUSDrate"
+                v-model="forPrint.rateOfPolicyCurrencyVsUSD"
                 :disabled="selectedCurrency == 'USD' ? true : false"
               ></v-text-field>
             </v-col>
@@ -319,7 +324,7 @@
                 label="Rate Of LYD VS USD"
                 variant="outlined"
                 clearable
-                v-model="policyLYDrate"
+                v-model="forPrint.rateOfLYDVsUSD"
                 :disabled="selectedCurrency == 'LYD' ? true : false"
               ></v-text-field>
             </v-col>
@@ -674,10 +679,10 @@
                   formattedacceptanceSumInsured: formattedacceptanceSumInsured,
                   formattedacceptancePremium: formattedacceptancePremium,
                   formattedUSDacceptanceSumInsured:
-                    formattedUSDacceptanceSumInsured,
+                  formattedUSDacceptanceSumInsured,
                   formattedUSDacceptancepremium: formattedUSDacceptancepremium,
                   formattedLYDacceptanceSumInsured:
-                    formattedLYDacceptanceSumInsured,
+                  formattedLYDacceptanceSumInsured,
                   formattedLYDacceptancepremium: formattedLYDacceptancepremium,
                   ourShare: ourShare,
                   formattedLYDbrokerAmount: formattedLYDbrokerAmount,
@@ -850,7 +855,8 @@ const policyUSDrate = ref(policyStore.policyUSDrate);
 const policyLYDrate = ref(policyStore.policyLYDrate);
 const classBusinessItems = ref([]);
 const TSIItems = ref([]);
-const insuedName = ref("");
+const insuedName = ref();
+const policyNumber = ref();
 const FireClassBusiness = ref(policyStore.FireClassBusiness);
 const EngClassBusiness = ref(policyStore.EngClassBusiness);
 const GaClassBusiness = ref(policyStore.GaClassBusiness);
@@ -1196,33 +1202,33 @@ watch(dialog, (val) => {
 });
 
 const forPrint = {
-  policyNumber: "ABC123",
-  insuredName: "Mohaned toha",
-  inusuranceOrBroker: "ABC Insurance",
-  quarter: "Q1",
+  policyNumber: "",
+  insuredName: "",
+  inusuranceOrBroker: "",
+  quarter: "",
   country: "USA",
   currency: "USD",
-  limitOfTreaty: "1000000",
-  dateFrom: new Date("2024-01-01T00:00:00.000Z"),
+  limitOfTreaty: "",
+  dateFrom: new Date(""),
   isDateFromOpen: true,
-  dateTo: new Date("2024-12-31T23:59:59.999Z"),
+  dateTo: new Date(""),
   isDateToOpen: true,
-  pml: "500000",
-  ppw: "75000",
-  confirmation: "CONF-123",
-  closing: "CLOS-456",
-  notes: ["Note 1", "Note 2"],
-  policyType: "Property",
-  classOfBusiness: "Commercial",
+  pml: "",
+  ppw: "",
+  confirmation: "",
+  closing: "no",
+  notes: [],
+  policyType: "",
+  classOfBusiness: "",
   sumInsuredName: "Property Insurance",
   sumInsuredNumber: 1000000,
   covers: ["Fire", "Theft"],
   additionalCover: ["Flood"],
   Exclusion: ["Earthquake"],
-  dateOfCurrency: new Date("2024-01-01T00:00:00.000Z"),
-  rateOfPolicyCurrencyVsUSD: 1.2,
-  rateOfLYDVsUSD: 0.5,
-  TSIPolicyCurrency: 900000,
+  dateOfCurrency: new Date(""),
+  rateOfPolicyCurrencyVsUSD: 0,
+  rateOfLYDVsUSD: 0,
+  TSIPolicyCurrency: 0,
   premiumPolicyCurrency: 120000,
   TSIAcceptancePolicyCurrency: 850000,
   premiumAcceptancePolicyCurrency: 110000,
@@ -1260,19 +1266,53 @@ const forPrint = {
   isFac: true,
   isApprove: true,
   issuedDate: new Date("2024-01-15T12:00:00.000Z"),
-  umbrellaReference: "UMB-789",
+  umbrellaReference: "Ref",
   companyReference: "COMP-XYZ",
   employeeName: "Jane Smith",
 };
-
 const postDataToApi = async () => {
   try {
     const response = await axios.post(
-      "http://100.87.98.66:3000/risks",
-      forPrint
-    );
+  "http://100.87.98.66:3000/risks",forPrint
+ 
+ );
+
+    //console.log(postDataToApi())
+
   } catch (error) {}
 };
 
+// Ref: Ref,
+//                   policyUSDrate: policyUSDrate,
+//                   policyLYDrate: policyLYDrate,
+//                   formattedTotalSumInsured: formattedTotalSumInsured,
+//                   formattedPremium: formattedPremium,
+//                   selectedCurrency: selectedCurrency,
+//                   selectedAdditionalCover: selectedAdditionalCover,
+//                   formattedacceptanceSumInsured: formattedacceptanceSumInsured,
+//                   formattedacceptancePremium: formattedacceptancePremium,
+//                   formattedUSDacceptanceSumInsured:
+//                   formattedUSDacceptanceSumInsured,
+//                   formattedUSDacceptancepremium: formattedUSDacceptancepremium,
+//                   formattedLYDacceptanceSumInsured:
+//                   formattedLYDacceptanceSumInsured,
+//                   formattedLYDacceptancepremium: formattedLYDacceptancepremium,
+//                   ourShare: ourShare,
+//                   formattedLYDbrokerAmount: formattedLYDbrokerAmount,
+//                   formattedUSDbrokerAmount: formattedUSDbrokerAmount,
+//                   brokerRate: brokerRate,
+//                   formattedUSDFACPremium: formattedUSDFACPremium,
+//                   insuedName: insuedName,
+//                   reinsurance: reinsurance,
+//                   selectedPolicyType,
+//                   From: From,
+//                   ToDate: dateTo2,
+//                   selectedCountry: selectedCountry,
+//                   policyNumber: policyNumber,
+//                   ppw: ppw,
+//                   pml: pml,
+//                   quarter: quarter,
+//                   notes: notes,
+//                   selectedChips: selectedChips,
 
 </script>
